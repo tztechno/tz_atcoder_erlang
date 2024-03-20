@@ -15,7 +15,7 @@ main(_) ->
 
 main(_) ->
     {ok, [A, B, C]} = io:fread("", "~d ~d ~d"),
-    ans = (A + B + C) - lists:max([A, B, C]).
+    ans = (A + B + C) - lists:max([A, B, C]),
     io:format("~p~n", [ans]),
     halt().
 ##################################################

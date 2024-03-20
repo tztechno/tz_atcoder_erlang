@@ -10,6 +10,7 @@ main(_) ->
     io:format("~p~n", [Ans]),
     halt().
 ##################################################
+[error error error error error error error error error]
 -module('Main').
 -export([main/1]).
 

@@ -13,10 +13,12 @@ main(_) ->
 -module('Main').
 -export([main/1]).
 
-main(_) ->
+main() ->
     {ok, [A, B, C]} = io:fread("", "~d ~d ~d"),
-    ans = (A + B + C) - lists:max([A, B, C]),
-    io:format("~p~n", [ans]),
+    Sum = A + B + C,
+    Max = lists:max([A, B, C]),
+    Ans = Sum - Max,
+    io:format("~p~n", [Ans]),
     halt().
 ##################################################
 

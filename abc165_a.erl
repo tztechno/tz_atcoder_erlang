@@ -17,7 +17,7 @@ main(_) ->
     {ok, [K]} = io:fread("", "~d"),
     {ok, [A, B]} = io:fread("", "~d ~d"),
     Ans = check_divisible(A, B, K),
-    io:format("~s", Ans),
+    io:format("~s~n", Ans),
     halt().
 
 check_divisible(A, B, K) ->

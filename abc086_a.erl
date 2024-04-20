@@ -26,11 +26,33 @@ main(_) ->
 input(Pat) ->
     {ok, L} = io:fread("", Pat),
     L.
+
+###########################################################
+[error]
+Main.erl:1:1: no module definition
+%    1| solve() ->
+%     | ^
+
+Main.erl:2:14: function input/1 undefined
+%    2|     [A, B] = input("~d~d"),
+%     |              ^
+
+Main.erl:1:1: Warning: function solve/0 is unused
+%    1| solve() ->
+%     | ^
+-----------------------------------------------------------
+
+solve() ->
+    [A, B] = input("~d~d"),
+    io:format("~s~n", [case A * B rem 2 of
+        0 -> "Even"; 1 -> "Odd" end]),
+    ok.
+
 ###########################################################
 [error]
 Runtime terminating during boot ({{badmatch,{error,terminated}},[{Main,main,1,[{_},{_}]},{init,start_em,1,[]},{init,do_boot,3,[]}]})
 Crash dump is being written to: erl_crash.dump...done
-----------------------------------------------------------
+-----------------------------------------------------------
 solve() ->
     [A, B] = input("~d~d"),
     io:format("~s~n", [case A * B rem 2 of

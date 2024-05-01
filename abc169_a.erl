@@ -1,3 +1,5 @@
+[今, error]
+
 -module('Main').
 -export([main/1]).
 
